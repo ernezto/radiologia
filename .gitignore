@@ -2,3 +2,4 @@ vendor/
 log/
 bin/
 db/
+tmp/
