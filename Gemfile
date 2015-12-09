@@ -6,7 +6,7 @@ ruby '2.2.0'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
 
-group :development do
+group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
