@@ -3,4 +3,7 @@ log/
 bin/
 db/*.sqlite3
 tmp/
+
+# vim temp files
 *.swp
+*.swo
