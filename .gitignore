@@ -1,6 +1,6 @@
 vendor/
 log/
 bin/
-db/
+db/*.sqlite3
 tmp/
 *.swp
