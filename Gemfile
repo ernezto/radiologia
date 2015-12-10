@@ -17,6 +17,7 @@ group :test do
   gem 'guard-rspec'
   gem 'capybara'
   gem 'launchy'
+  gem "codeclimate-test-reporter", require: nil
 end
 
 group :production do
