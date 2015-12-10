@@ -13,12 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20151209184548) do
 
-  create_table "clinic_tables", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.string "phone"
-  end
-
   create_table "clinics", force: :cascade do |t|
     t.string "name"
     t.string "phone"
