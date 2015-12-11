@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'clinic' do
+describe Clinic do
 
   context '#validation' do
     let(:clinic) { create :clinic }
