@@ -1,0 +1,23 @@
+<div class="container">
+  <p class="pull-right"><%= link_to 'Nueva clínica', new_clinic_path, class: 'btn btn-default' %></p>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @clinics.each do |clinic| %>
+        <tr>
+          <td><%= clinic.id %></td>
+          <td><%= clinic.name %></td>
+          <td><%= clinic.address %></td>
+          <td><%= clinic.phone %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

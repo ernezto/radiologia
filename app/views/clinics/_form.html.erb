@@ -1,0 +1,31 @@
+<div class="col-md-5">
+  <%= form_for(@clinic, html: {role: 'form'}) do |f| %>
+    <% if @clinic.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@clinic.errors.count, "error") %> impidieron guardar esta clínica:</h2>
+
+        <ul>
+          <% @clinic.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control', placeholder: 'Nombre' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :phone %>
+      <%= f.text_field :phone, class: 'form-control', placeholder: 'Teléfono' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :address %>
+      <%= f.text_area :address, class: 'form-control', placeholder: 'Dirección' %>
+    </div>
+
+    <%= f.submit class: 'btn btn-default' %>
+    <%= link_to 'Back', clinics_path, class: 'btn btn-danger' %>
+  <% end %>
+</div>

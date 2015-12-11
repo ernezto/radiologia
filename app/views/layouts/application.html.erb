@@ -52,9 +52,21 @@
                         <%= link_to 'Servicios', root_path(anchor: 'services') %>
                       </li>
                       <li>
-                        <%= link_to 'Contáctanos', root_path(anchor: 'contact') %>
+                      <%= link_to 'Contáctanos', root_path(anchor: 'contact') %>
                       </li>
                     <% end %>
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acciones <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown-header">Clínicas</li>
+                      <li><%= link_to 'Listado clínicas', clinics_path %></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li><a href="#">One more separated link</a></li>
+                    </ul>
+                    </li>
                 </ul>
                  <p class="navbar-text pull-right">
                  <% if user_signed_in? %>
