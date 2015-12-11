@@ -29,18 +29,33 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a class="page-scroll" href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">Qui&eacute;nes Somos</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Servicios</a>
-                    </li>
-                    <li>
-                    <a class="page-scroll" href="#contact">Cont&aacute;ctanos</a>
-                    </li>
+                    <% if current_page?(root_path) %>
+                      <li class="hidden">
+                      <a class="page-scroll" href="#page-top"></a>
+                      </li>
+                      <li>
+                      <a class="page-scroll" href="#about">Qui&eacute;nes Somos</a>
+                      </li>
+                      <li>
+                      <a class="page-scroll" href="#services">Servicios</a>
+                      </li>
+                      <li>
+                      <a class="page-scroll" href="#contact">Cont&aacute;ctanos</a>
+                      </li>
+                    <% else %>
+                      <li class="hidden">
+                        <%= link_to 'Radiología', root_path %>
+                      </li>
+                      <li>
+                        <%= link_to 'Quiénes Somos', root_path(anchor: 'about') %>
+                      </li>
+                      <li>
+                        <%= link_to 'Servicios', root_path(anchor: 'services') %>
+                      </li>
+                      <li>
+                        <%= link_to 'Contáctanos', root_path(anchor: 'contact') %>
+                      </li>
+                    <% end %>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
