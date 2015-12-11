@@ -100,7 +100,3 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
-
-class ActionController::TestCase
-  include Devise::TestHelpers
-end
