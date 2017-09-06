@@ -1,27 +1,25 @@
 require 'rails_helper'
 
 describe Clinic do
+  subject(:clinic) { Clinic.new(name: name, address: address, phone: phone)}
+  let(:name) { Faker::Name.name }
+  let(:address) { Faker::Address.street_address }
+  let(:phone) { Faker::PhoneNumber.phone_number }
 
   context '#validation' do
-    let(:clinic) { create :clinic }
-
-    it 'should be valid when has a name' do
-      expect(clinic).to be_valid
+    context 'when has all required fields' do
+      let(:phone) { nil }
+      it { is_expected.to be_valid }
     end
 
-    it 'should be invalid when no name is provided' do
-      clinic.name = nil
-      expect(clinic).to be_invalid
+    context 'when name is not provided' do
+      let(:name) { nil }
+      it { is_expected.to be_invalid }
     end
 
-    it 'should be valid without address' do
-      clinic.address = nil
-      expect(clinic).to be_valid
-    end
-
-    it 'should be valid without phone number' do
-      clinic.phone = nil
-      expect(clinic).to be_valid
+    context 'when address is not provided' do
+      let(:address) { nil }
+      it { is_expected.to be_invalid }
     end
   end
 end

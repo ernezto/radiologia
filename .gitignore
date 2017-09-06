@@ -7,3 +7,4 @@ tmp/
 # vim temp files
 *.swp
 *.swo
+*.swn
