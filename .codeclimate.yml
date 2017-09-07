@@ -1,24 +1,45 @@
+---
 engines:
-  rubocop:
+  brakeman:
     enabled: true
-brakeman:
-    enabled: true
-  eslint:
+  bundler-audit:
     enabled: true
   csslint:
+    enabled: true
+  coffeelint:
     enabled: true
   duplication:
     enabled: true
     config:
       languages:
-      - ruby:
-      - javascript:
+      - ruby
+      - javascript
+      - python
+      - php
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+  rubocop:
+    enabled: true
 ratings:
   paths:
-  - app/**
-  - lib/**
+  - Gemfile.lock
+  - "**.erb"
+  - "**.haml"
   - "**.rb"
-  - "**.go"
+  - "**.rhtml"
+  - "**.slim"
+  - "**.css"
+  - "**.coffee"
+  - "**.inc"
+  - "**.js"
+  - "**.jsx"
+  - "**.module"
+  - "**.php"
+  - "**.py"
 exclude_paths:
-- "app/assets/javascripts/jquery.easing.min.js"
-- "app/assets/javascripts/jquery.js"
+- config/
+- db/
+- spec/
+- vendor/
