@@ -254,7 +254,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capybara
-  codeclimate-test-reporter
+  codeclimate-test-reporter (~> 1.0.0)
   coffee-rails
   devise
   factory_girl_rails
