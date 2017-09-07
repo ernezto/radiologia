@@ -5,4 +5,7 @@
 [![Issue Count](https://codeclimate.com/github/ernezto/radiologia/badges/issue_count.svg)](https://codeclimate.com/github/ernezto/radiologia)
 
 # Comandos utiles
+preparar el ambiente de desarrollo:
+bundle install --without production
 rails g factory_girl:model Specialist name:string last_name:string phone:string
+
