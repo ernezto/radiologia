@@ -9,4 +9,4 @@ tmp/
 *.swo
 *.swn
 coverage/
-.bundle/config
+.bundle/*
