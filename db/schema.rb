@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170908001624) do
     t.string "email"
   end
 
-  create_table "doctors_clinics_joins", id: false, force: :cascade do |t|
+  create_table "doctors_clinics", id: false, force: :cascade do |t|
     t.integer "doctor_id"
     t.integer "clinic_id"
   end
