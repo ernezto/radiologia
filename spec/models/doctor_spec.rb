@@ -25,16 +25,17 @@ describe Doctor do
     let(:clinic) { create(:clinic) }
     let(:expected_clinics) { [create(:clinic), create(:clinic)] }
 
-    it 'should add an existing clinic to a doctor' do
+    before(:each) do
       doctor.clinics << clinic
       doctor.save!
+    end
+
+    it 'should add an existing clinic to a doctor' do
       doctor.reload
       expect(doctor.clinics).to include(clinic)
     end
 
     it 'should replace existing clinics with new ones' do
-      doctor.clinics << clinic
-      doctor.save!
       doctor.clinics = expected_clinics
       doctor.save!
       doctor.reload
