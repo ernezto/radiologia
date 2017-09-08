@@ -5,6 +5,8 @@ addons:
   code_climate:
     repo_token:
       secure: fssr5/Z89S5l7gZl5Xv1Zw/sbmAN/IUSaved5D4rz6qVNbYtlJb3cXnGTEIWrLl7tIOCYTmKo7KSp3PDwffEIR2r4COBEAmeyi6Vg/Rgg6fUWfx+QIQdIgGd6v42jBnGxUDTV8CBCjkV1VrQ2IK+JYBS019kA8SsiUf0cIUdF1oxY8xvEo6yU0kPNbrL+GrAL6J/xIqHo6Vrdc3I7afn4GurSOU8+JDPXMOX6BsnrUbvL1ufHkYjnmXqCloD1c2+ek1cIumYPX2BD89a06fRU4qe0DMsOYA/HL60rS+D6D2J+OyfbNVIeLlvxSa/ldXfrOBOqf76n/4IeG17+7KtEWByKdZGS51imdMZKfhUGZBtpK1QVlKNaCBt9Pb35uVFn+zf07zRpHudQSBgjef5vZZahvO6yW9zVVCCICTRCCHzo4NsrMl4w/ON8VoK42KPkrFfxOHBRTsT+JavNa16FFYWKLajvWri60jJRCOAXBxDhvMggQPIoM9H+RBjccDRnw8cx4zs8VLyD17MmN+/AYi4NfE+wyKjP8CVCyc3AVO4bRE9jOHD34SpE/vAAcQY7SqkxIpkLRaLGEg8O5yWqIyCuTEZRZTJwuDey3iMMTo5CGaCEAptkM8MtUo7MlYX75DHYx9ZSB7mlhpSpLCFY6vyxJxoaefDuv2ORaw+H40=
+before_install:
+  - bundle exec rake db:reset
 install:
   - bundle install --jobs=3 --retry=3 --deployment
   - bundle exec rake db:migrate RAILS_ENV=test
