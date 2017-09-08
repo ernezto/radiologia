@@ -23,10 +23,11 @@ describe Doctor do
 
   context 'when saving clinic relashionship' do
     let(:clinic) { create(:clinic) }
-    it 'should create a clinic for a doctor' do
+    it 'should add an existing clinic to a doctor' do
+      doctor.clinics << clinic
       doctor.save
-      doctor.clinics.create(:clinic)
-      expect { doctor.save }.to change(Clinic, :count).by(1)
+      doctor.reload
+      expect(doctor.clinics).to include(clinic)
     end
   end
 end

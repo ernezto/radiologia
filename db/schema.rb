@@ -19,6 +19,11 @@ ActiveRecord::Schema.define(version: 20170908001624) do
     t.string "address"
   end
 
+  create_table "clinics_doctors", id: false, force: :cascade do |t|
+    t.integer "doctor_id"
+    t.integer "clinic_id"
+  end
+
   create_table "doctors", force: :cascade do |t|
     t.string "name"
     t.string "lastname"
@@ -26,11 +31,6 @@ ActiveRecord::Schema.define(version: 20170908001624) do
     t.string "landline"
     t.string "dni"
     t.string "email"
-  end
-
-  create_table "doctors_clinics", id: false, force: :cascade do |t|
-    t.integer "doctor_id"
-    t.integer "clinic_id"
   end
 
   create_table "users", force: :cascade do |t|
