@@ -11,12 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151210231628) do
+ActiveRecord::Schema.define(version: 20170908001624) do
 
   create_table "clinics", force: :cascade do |t|
     t.string "name"
     t.string "phone"
     t.string "address"
+  end
+
+  create_table "doctors", force: :cascade do |t|
+    t.string "name"
+    t.string "lastname"
+    t.string "mobile"
+    t.string "landline"
+    t.string "dni"
+    t.string "email"
+  end
+
+  create_table "doctors_clinics_joins", id: false, force: :cascade do |t|
+    t.integer "doctor_id"
+    t.integer "clinic_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -12,6 +12,8 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'guard-rubocop'
+  gem 'rubocop', require: false
 end
 
 group :test do
@@ -57,7 +59,7 @@ gem 'sdoc', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'simplecov', :require => false
+  gem 'simplecov', require: false
 end
 
 group :development do

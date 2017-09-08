@@ -6,7 +6,7 @@ describe ClinicsController do
   context 'when signed in' do
     let(:clinic) { build :clinic }
     let(:user) { create :user }
-    before (:each) { sign_in user }
+    before(:each) { sign_in user }
 
     describe '#list' do
       it 'should list all the clinics' do
