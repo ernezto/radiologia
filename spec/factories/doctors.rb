@@ -8,5 +8,6 @@ FactoryGirl.define do
     email { Faker::Internet.email }
     mobile { Faker::PhoneNumber.phone_number }
     landline { Faker::PhoneNumber.phone_number }
+    clinics { [create(:clinic), create(:clinic)] }
   end
 end
