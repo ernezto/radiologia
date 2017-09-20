@@ -1,0 +1,27 @@
+<div class="container">
+  <p class="pull-right"><%= link_to 'Nuevo doctor', new_doctor_path, class: 'btn btn-default' %></p>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Teléfono</th>
+        <th>Correo</th>
+        <th>Dirección</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @doctors.each do |doctor| %>
+        <tr>
+          <td><%= doctor.id %></td>
+          <td><%= doctor.name %></td>
+          <td><%= doctor.lastname %></td>
+          <td><%= doctor.mobile %></td>
+          <td><%= doctor.email %></td>
+          <td><%= doctor.landline %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

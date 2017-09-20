@@ -1,11 +1,9 @@
 require 'rails_helper'
-require 'faker'
 
-describe ClinicsController do
-
+describe ClinicsController, type: :controller do
   context 'when signed in' do
-    let(:clinic) { build :clinic }
-    let(:user) { create :user }
+    let(:clinic) { build(:clinic) }
+    let(:user) { create(:user) }
     before(:each) { sign_in user }
 
     describe '#list' do
@@ -52,8 +50,9 @@ describe ClinicsController do
           expect(flash['notice']).to eq('Clínica creada satisfactoriamente')
         end
         it 'should create a clinic' do
-          post :create, clinic: attributes_for(:clinic)
-          expect(assigns(:clinic)).to be_persisted
+          expect {
+            post :create, clinic: attributes_for(:clinic)
+          }.to change{ Clinic.count }.by(1)
         end
       end
 

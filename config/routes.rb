@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :services
   devise_for :users
 
   root 'welcome#index'
 
-  resources :clinics, only: [:index, :create, :new, :update]
+  resources :clinics, only:  [:index, :create, :new, :update]
+  resources :doctors, only:  [:index, :create, :new, :update]
+  resources :services, only: [:index]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

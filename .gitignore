@@ -10,3 +10,4 @@ tmp/
 *.swn
 coverage/
 .bundle/*
+**/**/.DS_Store
