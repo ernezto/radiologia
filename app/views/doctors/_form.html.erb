@@ -13,23 +13,23 @@
     <% end %>
 
     <div class="form-group">
-      <%= f.label :dni %>
+      <%= f.label :dni, 'Cédula' %>
       <%= f.text_field :dni, class: 'form-control', placeholder: 'Cédula' %>
     </div>
     <div class="form-group">
-      <%= f.label :name %>
+      <%= f.label :name, 'Nombre' %>
       <%= f.text_field :name, class: 'form-control', placeholder: 'Nombre' %>
     </div>
     <div class="form-group">
-      <%= f.label :lastname %>
+      <%= f.label :lastname, 'Apellidos' %>
       <%= f.text_field :lastname, class: 'form-control', placeholder: 'Apellidos' %>
     </div>
     <div class="form-group">
-      <%= f.label :mobile %>
+      <%= f.label :mobile, 'Teléfono móvil' %>
       <%= f.text_field :mobile, class: 'form-control', placeholder: 'Móvil' %>
     </div>
     <div class="form-group">
-      <%= f.label :landline %>
+      <%= f.label :landline, 'Teléfono fijo' %>
       <%= f.text_field :landline, class: 'form-control', placeholder: 'Fijo' %>
     </div>
     <div class="form-group">
@@ -37,6 +37,7 @@
       <%= f.text_field :email, class: 'form-control', placeholder: 'Correo' %>
     </div>
     <div class="form-group">
+      <%= f.label :clinics, 'Clínicas' %>
       <%= collection_select(:doctor, :clinics, @clinics, :id, :name, {}, {selected: @doctor.clinics, multiple:true, class: 'form-control' } )%>
     </div>
     <%= f.submit class: 'btn btn-default' %>
